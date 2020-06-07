@@ -205,10 +205,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them.
 
 ### imports / technologies:
-
 * javafx
-* fontawesomefx-8.9
-* jfoenix-8.0.8
 * updated Java Development Kit ( JDK )
 * Flight Gear - open-source flight simulator
 
