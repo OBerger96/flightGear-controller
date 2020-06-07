@@ -1,5 +1,5 @@
 # Advanced Software Development Project - milestone 5
-
+<p text align="center">end of semester project<p>
 This is a project we developed during our advanced software programming course in our 2nd year.<br/>
 This project helped us to gain a higher level of knowledge in programming, with emphasis on design patterns and programming principles such as SOLID and GRASP, and finally developing our own JavaFX desktop application. <br/>
 So, sit back, relax, and enjoy the flight!
