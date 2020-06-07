@@ -57,7 +57,7 @@ We created the ```CacheManager``` interface to manage the cache for us, with the
 </p>
 
 ### Our Concerete Server
-Given a graph, it could solve it using [A-star](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm (which is already implemented in this project based on Dijkistra algorithm using manhattan distances) or any other search algorithm.
+Given a graph, it could solve it using [A-star](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm (which is already implemented in this project based on [Dijkistra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) algorithm using manhattan distances) or any other search algorithm.
 
 <p align="center">
   <img src="https://github.com/OBerger96/flightGear-controller/blob/master/UML/Our%20Concrete%20Server.png" width="800">
@@ -133,7 +133,7 @@ We can see that arithmetic expressions are supported as well, and to interpret t
 
 In this project there is an extensive use of commands, the plane needs to receive a lot of instructions in a short period of time 
 in order to fly correctly. For that matter, the most suitable design pattern for the task is the Command Pattern. 
-The Command Pattern implementation can be seen in our ```CompParser``` - each command in the program is receiving its own Command Object.
+The Command Pattern implementation can be seen in our ```ConditionpParser``` - each command in the program is receiving its own Command Object.
 
 It is important that all commands will implement the same interface, because we want them to have a common polymorphic denominator.
 
