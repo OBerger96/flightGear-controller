@@ -126,6 +126,18 @@ rudder = (h0 - heading)/180
 ```
 We can see that arithmetic expressions are supported as well, and to interpret them we use [Dijkstra's Shunting Yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).
 
+### Command Patterns
+<p align="center">
+  <img src="https://github.com/OBerger96/flightGear-controller/blob/master/UML/Command%20Pattern.png?raw=true" width="600">
+</p>
+In this project there is an extensive use of commands, the plane needs to receive a lot of instructions in a short period of time in order to fly correctly. For that matter, the most suitable design pattern for the task is the Command Pattern. The Command Pattern implementation can be seen in our Parser - each command in the program is receiving its own Command Object.
+
+It is important that all commands will implement the same interface, because we want them to have a common polymorphic denominator.
+
+Another reason to use the Command Pattern is for when we need an assembly of commands at once. For example, we needed a command that holds other different commands inside of it. In that case, we combined the Command Pattern with Composite Pattern.
+
+So if, for example, we take a look at the "loop" command or "if" command, then we can see that each contains a list of commands which in turn can be either a standard single command or a list of commands.
+
 ### Interpreter stages
 <p align="center">
   <img src="https://github.com/OBerger96/flightGear-controller/blob/master/Images/script-reader.jpeg" width="800">
@@ -136,7 +148,7 @@ The first stage that happens in the interpretation process is ``Lexer``.
 
 The Lexer takes the string as it is, and converts it to a logical distribution according to commands and parameters that can run later on with a Scanner.
 
-The next stage is the ``parser`` stage, which begins converting the "array" created by the Lexer into commands and executes them.
+The next stage is the ``Parser`` stage, which begins converting the "array" created by the Lexer into commands and executes them.
 
 However, since the script is only supposed to control the plane, we don't want that the interpreter will have to deal with connecting to server and running the simulator, in case there are syntactic errors or incorrent entries that might be discovered in the middle of the script.
 
@@ -163,7 +175,7 @@ separate the View from the Model.
 something in the text, it will automatically changed in the ViewModel.
 
 For the MVVM architecture to work, we'll have to wrap the different components together. 
-This is done by the Observer Pattern, which binds the different components together, and notify them about changes that are made or needs to be made as required by the operator. 
+This is done by the Observer Pattern, which binds the different components together, and notify them about changes that are made or needed to be made as required by the operator. 
 
 ---
 ## Design and Functionality of the App
@@ -171,7 +183,7 @@ This is done by the Observer Pattern, which binds the different components toget
   <img src="https://github.com/OBerger96/flightGear-controller/blob/master/Images/screen.png?raw=true" width="800">
 </p>
 
-* **Connect** – The connect button will open a popup window and by entering ip and port we will connect to the flight simulator. The app will connect to the simulator as a client, this will also enable the use of all the functionality of the application.
+* **Connect** – The Connect button will open a popup window and by entering ip and port we will connect to the flight simulator. The app will connect to the simulator as a client, this will also enable the use of all the functionality of the application.
 
 * **Load data** – The Load Data button will open a folder of CSV files that are used as maps. When a CSV file is loaded then a map of the uploaded data is displayed. The map will be displayed in colors based on the height of each point in the map, the lower the area the color will be red and the higher the area the color will be greener. We will sample from the simulator the exact location of the aircraft, as a result, an icon will be displayed in the same location on the map.
 
