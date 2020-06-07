@@ -126,21 +126,6 @@ rudder = (h0 - heading)/180
 ```
 We can see that arithmetic expressions are supported as well, and to interpret them we use [Dijkstra's Shunting Yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).
 
-### Command Pattern
-<p align="center">
-  <img src="https://github.com/OBerger96/flightGear-controller/blob/master/UML/Command%20Pattern.png?raw=true" width="600">
-</p>
-
-In this project there is an extensive use of commands, the plane needs to receive a lot of instructions in a short period of time 
-in order to fly correctly. For that matter, the most suitable design pattern for the task is the Command Pattern. 
-The Command Pattern implementation can be seen in our ```ConditionpParser``` - each command in the program is receiving its own Command Object.
-
-It is important that all commands will implement the same interface, because we want them to have a common polymorphic denominator.
-
-Another reason to use the Command Pattern is for when we need an assembly of commands at once. For example, we needed a command that holds other different commands inside of it. In that case, we combined the **Command Pattern** with **Composite Pattern**.
-
-So if, for example, we take a look at the "loop" command or "if" command, then we can see that each contains a list of commands which in turn can be either a standard single command or a list of commands.
-
 ### Interpreter stages
 <p align="center">
   <img src="https://github.com/OBerger96/flightGear-controller/blob/master/Images/script-reader.jpeg" width="800">
