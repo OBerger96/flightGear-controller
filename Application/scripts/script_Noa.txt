@@ -1,0 +1,10 @@
+var minus = 0-0.5
+autoroute
+while goal != 1 {
+rudder = r
+aileron = minus * roll / 50
+elevator = e
+print heading
+sleep 400
+}
+print "done"

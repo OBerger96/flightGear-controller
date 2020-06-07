@@ -1,0 +1,1 @@
+java -jar "D:\CS_second year\second semster\Advanced software development 2\PTM_Project\Advanced Software Development Final Project - FlightGear Simulator Desktop Applicationr\Application\Server.jar"
