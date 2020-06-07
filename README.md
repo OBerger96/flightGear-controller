@@ -57,7 +57,7 @@ We created the ```CacheManager``` interface to manage the cache for us, with the
 </p>
 
 ### Our Concerete Server
-Given a graph, it could solve it using [A-star](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm ( which is already implemented in this project based on djkistra algorithm using manhattan distances ) or any other search algorithm.
+Given a graph, it could solve it using [A-star](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm (which is already implemented in this project based on Dijkistra algorithm using manhattan distances) or any other search algorithm.
 
 <p align="center">
   <img src="https://github.com/OBerger96/flightGear-controller/blob/master/UML/Our%20Concrete%20Server.png" width="800">
@@ -77,7 +77,7 @@ For example: lets assume we have this matrix:
 | 156 | 175 | 189 | **6**   |
 | 160 | 186 | 153 | **18**  |
 
-If we'll set the start point to be 115 (0,0) and the end point to be 18 (3,3) then the path ( the output ) will be:
+If we set the start point to be 115 (0,0) and the end point to be 18 (3,3) then the path (the output) will be:
 
 Right, Down, Right, Right, Down, Down.
 
@@ -206,7 +206,7 @@ What things you need to install the software and how to install them.
 
 ### imports / technologies:
 * javafx
-* updated Java Development Kit ( JDK )
+* updated Java Development Kit (JDK)
 * Flight Gear - open-source flight simulator
 
 ### Instructions
