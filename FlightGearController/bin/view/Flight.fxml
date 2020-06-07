@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<?import view.MapDisplayer?>
+<TitledPane fx:id="background" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="950.0" text="It's a Bird... It's Superman... Oh it's a Plane... - so let's Fly!" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FlightController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="705.0" style="-fx-background-color:#3282b8">
+         <children>
+            <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#Connect" text="Connect" style="-fx-background-color:#bbe1fa" />
+            <Button layoutX="98.0" layoutY="29.0" mnemonicParsing="false" onAction="#LoadDate" text="Load Data" style="-fx-background-color:#bbe1fa" />
+			<Button fx:id="calc" layoutX="193.0" layoutY="29.0" mnemonicParsing="false" onAction="#Calc" text="Calculate Path" style="-fx-background-color:#bbe1fa" />
+            <TextArea fx:id="TextArea" layoutX="338.0" layoutY="84.0" prefHeight="312.0" prefWidth="224.0" style="-fx-control-inner-background:#bbe1fa" />
+            <RadioButton fx:id="auto" layoutX="336.0" layoutY="29.0" mnemonicParsing="false" onAction="#AutoPilot" text="AutoPilot" />
+            <RadioButton fx:id="manual" layoutX="599.0" layoutY="29.0" mnemonicParsing="false" onAction="#Manual" text="Manual" />
+            <Button layoutX="520.5" layoutY="29.0" mnemonicParsing="false" onAction="#LoadText" text="Load" style="-fx-background-color:#bbe1fa" />
+            <Slider fx:id="throttle" layoutX="590.0" layoutY="105.0" majorTickUnit="0.1" max="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="214.0" prefWidth="49.0" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="rudder" layoutX="656.0" layoutY="348.0" majorTickUnit="0.1" max="1.0" min="-1.0" minorTickCount="1" prefHeight="18.0" prefWidth="225.0" showTickLabels="true" showTickMarks="true" />
+            <Circle fx:id="border" fill="#0f4c75" layoutX="768.0" layoutY="212.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 0, 0);" />
+            <Circle fx:id="Joystick" fill="#1b262c" layoutX="768.0" layoutY="212.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" />
+			<MapDisplayer fx:id="map" height="302.0" layoutX="14.0" layoutY="89.0" width="300.0" />
+			<Canvas fx:id="airplane" height="302.0" layoutX="14.0" layoutY="89.0" width="300.0" />
+            <Canvas fx:id="markX" height="302.0" layoutX="14.0" layoutY="89.0" width="300.0" />
+            <Text layoutX="746.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rudder" style="-fx-font-size:20px " />
+            <Text layoutX="555.0" layoutY="217.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Throttle" style="-fx-font-size:20px" />
+            <Text layoutX="725.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;- aileron -&gt;" style="-fx-font-size:20px" />
+            <Text layoutX="865.0" layoutY="216.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;- elevator -&gt;" style="-fx-font-size:20px" />
+         </children>
+      </AnchorPane>
+  </content>
+</TitledPane>
